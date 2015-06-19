@@ -18,3 +18,205 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000513s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000542s ]
 
+[ 2015-06-19T23:45:59+08:00 ] 127.0.0.1 /yoyoyo/think/index.php/Home/Comments/comments.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000111s ]
+SQL: SHOW COLUMNS FROM `books` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `books` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `comments` WHERE ( bookid = '1' ) ORDER BY create_time desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `bookzan` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bookzan` WHERE ( bookid = '1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bookzan` WHERE ( username = 'wanghao' ) LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant comments - assumed 'comments' /var/www/yoyoyo/think/Application/Home/Controller/CommentsController.class.php 第 57 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 24 行.
+NOTIC: [8] Use of undefined constant bookname - assumed 'bookname' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 28 行.
+NOTIC: [8] Use of undefined constant isbn - assumed 'isbn' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 32 行.
+NOTIC: [8] Use of undefined constant press - assumed 'press' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 36 行.
+NOTIC: [8] Use of undefined constant author - assumed 'author' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 40 行.
+NOTIC: [8] Use of undefined constant summary - assumed 'summary' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 44 行.
+NOTIC: [8] Use of undefined constant picture - assumed 'picture' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 48 行.
+NOTIC: [8] Use of undefined constant bookzan - assumed 'bookzan' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 57 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 96 行.
+NOTIC: [8] Use of undefined constant bookid - assumed 'bookid' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 100 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 104 行.
+NOTIC: [8] Use of undefined constant parentid - assumed 'parentid' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 108 行.
+NOTIC: [8] Use of undefined constant comment - assumed 'comment' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 112 行.
+NOTIC: [8] Use of undefined constant create_time - assumed 'create_time' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003302s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003340s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000952s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001014s ]
+
+[ 2015-06-19T23:46:02+08:00 ] 127.0.0.1 /yoyoyo/think/index.php/Home/Comments/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000117s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000109s ]
+
+[ 2015-06-19T23:46:02+08:00 ] 127.0.0.1 /yoyoyo/think/index.php/Home/User/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000106s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000192s ]
+
+[ 2015-06-19T23:46:02+08:00 ] 127.0.0.1 /yoyoyo/think/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000107s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000100s ]
+
+[ 2015-06-19T23:46:02+08:00 ] 127.0.0.1 /yoyoyo/think/index.php/Home/Comments/comments.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000062s ]
+SQL: SHOW COLUMNS FROM `books` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `books` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `comments` WHERE ( bookid = '1' ) ORDER BY create_time desc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `bookzan` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bookzan` WHERE ( bookid = '1' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bookzan` WHERE ( username = '' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant comments - assumed 'comments' /var/www/yoyoyo/think/Application/Home/Controller/CommentsController.class.php 第 57 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 24 行.
+NOTIC: [8] Use of undefined constant bookname - assumed 'bookname' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 28 行.
+NOTIC: [8] Use of undefined constant isbn - assumed 'isbn' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 32 行.
+NOTIC: [8] Use of undefined constant press - assumed 'press' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 36 行.
+NOTIC: [8] Use of undefined constant author - assumed 'author' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 40 行.
+NOTIC: [8] Use of undefined constant summary - assumed 'summary' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 44 行.
+NOTIC: [8] Use of undefined constant picture - assumed 'picture' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 48 行.
+NOTIC: [8] Use of undefined constant bookzan - assumed 'bookzan' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 57 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 96 行.
+NOTIC: [8] Use of undefined constant bookid - assumed 'bookid' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 100 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 104 行.
+NOTIC: [8] Use of undefined constant parentid - assumed 'parentid' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 108 行.
+NOTIC: [8] Use of undefined constant comment - assumed 'comment' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 112 行.
+NOTIC: [8] Use of undefined constant create_time - assumed 'create_time' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005673s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005740s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000119s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000058s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000113s ]
+
+[ 2015-06-19T23:46:03+08:00 ] 127.0.0.1 /yoyoyo/think/index.php/Home/Comments/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000112s ]
+
+[ 2015-06-19T23:46:03+08:00 ] 127.0.0.1 /yoyoyo/think/index.php/Home/User/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000157s ]
+
+[ 2015-06-19T23:46:03+08:00 ] 127.0.0.1 /yoyoyo/think/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000059s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000080s ]
+
+[ 2015-06-19T23:46:03+08:00 ] 127.0.0.1 /yoyoyo/think/index.php/Home/Comments/comments.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000070s ]
+SQL: SHOW COLUMNS FROM `books` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `books` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `comments` WHERE ( bookid = '1' ) ORDER BY create_time desc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `bookzan` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bookzan` WHERE ( bookid = '1' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `bookzan` WHERE ( username = '' ) LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant comments - assumed 'comments' /var/www/yoyoyo/think/Application/Home/Controller/CommentsController.class.php 第 57 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 24 行.
+NOTIC: [8] Use of undefined constant bookname - assumed 'bookname' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 28 行.
+NOTIC: [8] Use of undefined constant isbn - assumed 'isbn' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 32 行.
+NOTIC: [8] Use of undefined constant press - assumed 'press' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 36 行.
+NOTIC: [8] Use of undefined constant author - assumed 'author' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 40 行.
+NOTIC: [8] Use of undefined constant summary - assumed 'summary' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 44 行.
+NOTIC: [8] Use of undefined constant picture - assumed 'picture' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 48 行.
+NOTIC: [8] Use of undefined constant bookzan - assumed 'bookzan' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 57 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 96 行.
+NOTIC: [8] Use of undefined constant bookid - assumed 'bookid' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 100 行.
+NOTIC: [8] Use of undefined constant username - assumed 'username' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 104 行.
+NOTIC: [8] Use of undefined constant parentid - assumed 'parentid' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 108 行.
+NOTIC: [8] Use of undefined constant comment - assumed 'comment' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 112 行.
+NOTIC: [8] Use of undefined constant create_time - assumed 'create_time' /var/www/yoyoyo/think/Application/Runtime/Cache/Home/3c2d225e32d957828263d2fa9c9c1842.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003331s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000030s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000063s ]
+
+[ 2015-06-19T23:46:05+08:00 ] 127.0.0.1 /yoyoyo/think/index.php/Home/Comments/dianzan
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000182s ]
+
+[ 2015-06-19T23:46:05+08:00 ] 127.0.0.1 /yoyoyo/think/index.php/Home/User/login/error/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000071s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000153s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000245s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002867s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002936s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000055s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000045s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000091s ]
+

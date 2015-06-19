@@ -1,0 +1,67 @@
+<?php
+	$user = getUsername();
+?>
+
+<head>all notes information</head>
+<h1> user </h1>
+<table>
+	<tr>
+		<td>user:</td>
+		<td>{$user}</td>
+	</tr>
+</table>
+
+
+<h1>login out</h1>
+<!-- <FORM method="post" action=U("User/logout")> -->
+<FORM method="post" action="__URL__/logout">
+<INPUT type="submit" value="登出">
+</FORM>
+
+<h1> book name</h1>
+
+<table>
+ <tr>
+    <td>bookname:</td>
+    <td>{$bookInfo[bookname]}</td>
+ </tr>
+ <tr>
+    <td>picture:</td>
+    <td>{$bookInfo[picture]}</td>
+ </tr>
+ </table>
+
+
+<h1>notes list</h1>
+<h2>notesCount:{$allNotesCount}</h2>
+<h2>the first note</h2>
+<table>
+	<tr>
+		<td>id:</td>
+		<td>{$allNotes[0][id]}</td>
+	</tr>
+	<tr>
+		<td>bookid:</td>
+		<td>{$allNotes[0][bookid]}</td>
+	</tr>
+	<tr>
+		<td>username:</td>
+		<td>{$allNotes[0][username]}</td>
+	</tr>
+	<tr>
+		<td>chapter:</td>
+		<td>{$allNotes[0][chapter]}</td>
+	</tr>
+	<tr>
+		<td>page:</td>
+		<td>{$allNotes[0][page]}</td>
+	</tr>
+	<tr>
+		<td>note:</td>
+		<td>{$allNotes[0][note]}</td>
+	</tr>
+	<tr>
+		<td>create_tiem:</td>
+		<td>{$allNotes[0][create_time]}</td>
+	</tr>
+</table>

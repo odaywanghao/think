@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 
-use Think\Upload;
+// use Think\Upload;
 use Think\Controller;
 class NotesController extends Controller {
 	public function index() {

@@ -107,6 +107,31 @@ class NotesController extends Controller {
 		if (noLogin()) {
 			redirect(U('User/login', array("error" => 3)), 0, "go to login");
 		}
+		// first identify login or not
+
+		$upload = new \Think\Upload();// 实例化上传类
+    	$upload->maxSize   =     3145728 ;// 设置附件上传大小
+    	$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+    	$upload->rootPath  =     './Uploads/NotePhotoes/'; // 设置附件上传根目录
+    	$upload->savePath  =     ''; // 设置附件上传（子）目录
+    	$upload->callback  = 	  true;
+    	$upload->autoSub 	= 	false;
+    // 上传文件 
+    	$info   =   $upload->upload();
+    	if(!$info) {// 上传错误提示错误信息
+        	$this->error($upload->getError());
+    	}else{// 上传成功
+  //   	foreach($info as $key) 
+		// { 
+		// 　　echo $key; 
+		// } 
+		// var_dump($info);
+	        $this->success("add photo");
+    	}
+
+		// if (noLogin()) {
+		// 	redirect(U('User/login', array("error" => 3)), 0, "go to login");
+		// }
 		$bookid_session = getBookid();		
 		if (isset($bookid_session)) {
 			$bookId = $bookid_session;
@@ -162,18 +187,48 @@ class NotesController extends Controller {
 	}
 
 
+// array(1) { 
+// 	["photo"]=> array(9) { 
+// 		["name"]=> string(23) "6597270977284987003.jpg" 
+// 		["type"]=> string(10) "image/jpeg" 
+// 		["size"]=> int(53043) 
+// 		["key"]=> string(5) "photo" 
+// 		["ext"]=> string(3) "jpg" 
+// 		["md5"]=> string(32) "b373b8fc596a8952313d7d346c3752c9" 
+// 		["sha1"]=> string(40) "da581a7d1e3bd3ae902885cafcad5f3a06fad54a" 
+// 		["savename"]=> string(17) "5584cabadce99.jpg" 
+// 		["savepath"]=> string(11) "2015-06-20/" 
+// 	} 
+// 	}
+
 	public function upload(){
     $upload = new \Think\Upload();// 实例化上传类
     $upload->maxSize   =     3145728 ;// 设置附件上传大小
     $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-    $upload->rootPath  =     './Uploads/'; // 设置附件上传根目录
+    $upload->rootPath  =     './Uploads/NotePhotoes/'; // 设置附件上传根目录
     $upload->savePath  =     ''; // 设置附件上传（子）目录
+    $upload->callback  = 	  true;
+    $upload->autoSub 	= 	false;
     // 上传文件 
     $info   =   $upload->upload();
     if(!$info) {// 上传错误提示错误信息
-        $this->error($upload->getError());
+        // $this->error($upload->getError());
+        // echo $upload->getError();
+        if ($upload->getError() == "没有文件被上传！") {
+        	$this->assign('error', "oooo");
+        }	else {
+        		$this->assign('error', $upload->getError());
+        }
+        $this->display();
     }else{// 上传成功
-        $this->success('上传成功！');
+  //   	foreach($info as $key) 
+		// { 
+		// 　　echo $key; 
+		// } 
+		// var_dump($info);
+		echo $info['photo']['name'];
+		echo "hello";
+        // $this->success("add photo");
     }
 }
 

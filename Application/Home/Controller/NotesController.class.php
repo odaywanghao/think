@@ -119,25 +119,25 @@ class NotesController extends Controller {
     // 上传文件 
     	$info   =   $upload->upload();
     	if(!$info) {// 上传错误提示错误信息
-        	$this->error($upload->getError());
+        	// $this->error($upload->getError());
+        	$error = $upload->getError();
+        	if ($error == "没有文件被上传！") {
+        		$photo = NULL;
+        	}	else {
+        			$this->error($upload->getError);
+        	}
     	}else{// 上传成功
-  //   	foreach($info as $key) 
-		// { 
-		// 　　echo $key; 
-		// } 
-		// var_dump($info);
-	        $this->success("add photo");
+	        // $this->success("add photo");
+	        $photo = $info['photo']['name'];
     	}
 
-		// if (noLogin()) {
-		// 	redirect(U('User/login', array("error" => 3)), 0, "go to login");
-		// }
 		$bookid_session = getBookid();		
 		if (isset($bookid_session)) {
 			$bookId = $bookid_session;
 		}	else {
-				$_SESSION['bookid'] = 1;
-				$bookId = 1;
+				// $_SESSION['bookid'] = 1;
+				// $bookId = 1;
+				redirect(U('Notes/index'), 0, 'bookid miss, go back to the index');
 		}
 		// get bookId
 
@@ -146,19 +146,17 @@ class NotesController extends Controller {
 		// get book information
 
 		$username = getUsername();
-		$note = D('notes');
-		if ($note->create()) {
-			$result = $note->add();
-			if ($result) {
-				// $this->success('数据添加成功');
-				redirect(U("Notes/index"), 0, "add comments success");
-				echo "nihao";
-			} else  {
-				$this->error('数据添加失败');
-			}
-		} else 	{
-			$this->error($note->getError());
-		}
+		$data['bookid'] = $bookId;
+		$data['username'] = $username;
+		$data['chapter'] = I('post.chapter');
+		$data['page'] = I('post.page');
+		$data['note'] = I('post.note');
+		$data['photo'] = $photo;
+		$data['public'] = I('post.public');
+		$data['create_time'] = NOW_TIME;
+		// var_dump($data);
+		$noteModel = M('notes');
+		$noteModel->add($data);
 
 	}
 

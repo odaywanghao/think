@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `notes` (
   `chapter` int(10) unsigned NOT NULL,
   `page` varchar(50) NOT NULL,
   `note` varchar(255) NOT NULL,
-  `photo` varchar(100) NOT NULL,
+  `photo` varchar(100) ,
   `public` smallint(2) unsigned NOT NULL,
   `create_time` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`)

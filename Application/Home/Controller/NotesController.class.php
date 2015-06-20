@@ -8,27 +8,14 @@ class NotesController extends Controller {
 		redirect(U('Notes/bookAllNotes'), 0, "go to book's all notes");
 	}
 
-	// public function bookInfoHere() {
-	// 	$book = M('books');
-	// 	$bookInfo = $book->find($bookId);
-	// 	return $bookInfo;
-	// }
-
-	// public function bookIdHere() {
-	// 	$bookid_session = getBookid();		
-	// 	if (isset($bookid_session)) {
-	// 		$bookId = $bookid_session;
-	// 	}	else {
-	// 			$_SESSION['bookid'] = 1;
-	// 			$bookId = 1;
-	// 	}
-	// 	return $bookId;
-	// }
+	public function gotoComments() {
+		redirect(U('Comments/index'), 0, "go to comments");
+	}
 
 	public function bookAllNotes() {
-		if (noLogin()) {
-			redirect(U('User/login', array("error" => 3)), 0, "go to login");
-		}
+		// if (noLogin()) {
+		// 	redirect(U('User/login', array("error" => 3)), 0, "go to login");
+		// }
 		$bookid_session = getBookid();		
 		if (isset($bookid_session)) {
 			$bookId = $bookid_session;
@@ -65,13 +52,10 @@ class NotesController extends Controller {
 				$bookId = 1;
 		}
 		// get bookId
-
-
 		$username = getUsername();
 		$book = M('books');
 		$bookInfo = $book->find($bookId);
 		// get book information
-
 		$bookAllNotes = M('notes');
 		$book_all_users_notes_public = "bookid = '$bookId' and username = '$username'";
 		$allNotes = $bookAllNotes->where("$book_all_users_notes_public")->order('create_time desc')->select();
@@ -100,8 +84,9 @@ class NotesController extends Controller {
 	}
 
 	public function addNote() {
-		$this->display();		
+		$this->display();
 	}
+
 
 	public function addNoteIn() {
 		if (noLogin()) {
@@ -128,7 +113,7 @@ class NotesController extends Controller {
         	}
     	}else{// 上传成功
 	        // $this->success("add photo");
-	        $photo = $info['photo']['name'];
+	        $photo = $info['photo']['savename'];
     	}
 
 		$bookid_session = getBookid();		
@@ -148,6 +133,18 @@ class NotesController extends Controller {
 		$username = getUsername();
 		$data['bookid'] = $bookId;
 		$data['username'] = $username;
+		// $chapter = I('post.chapter');
+		// $page = I('post.page');
+		// $note = I('post.note');
+		// if (!isset($chapter)) {
+		// 	redirect(U('Notes/addNote', array('error' => 1)), 0, "no chapter, go back");
+		// }
+		// if (!isset($page)) {
+		// 	redirect(U('Notes/addNote', array('error' => 2)), 0, "no page, go back");
+		// }
+		// if (!isset($note)) {
+		// 	redirect(U('Notes/addNote', array('error' => 3)), 0, "no note, go back");
+		// }
 		$data['chapter'] = I('post.chapter');
 		$data['page'] = I('post.page');
 		$data['note'] = I('post.note');
@@ -157,6 +154,7 @@ class NotesController extends Controller {
 		// var_dump($data);
 		$noteModel = M('notes');
 		$noteModel->add($data);
+		redirect(U('notes/myAllNotes'), 0, "add success, go to see my all notes");
 
 	}
 
@@ -180,8 +178,8 @@ class NotesController extends Controller {
 	}
 
 
-	public function logout() {
-		redirect(U("User/logout"), 0, "log out");
+	public function logout($error = 0) {
+		redirect(U("User/logout", array('error' => $error)), 0, "log out");
 	}
 
 

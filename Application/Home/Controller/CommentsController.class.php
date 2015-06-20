@@ -9,7 +9,9 @@ class CommentsController extends Controller {
 		// echo "hello world";
 	}
 
-
+	public function gotoNotes() {
+		redirect(U('Notes/index'), 0, "go to notes");
+	}
 	public function comments($bookId = -1) {
 		if ($bookId !=  -1) {
 			$_SESSION['bookid'] = $bookId;
@@ -98,8 +100,8 @@ class CommentsController extends Controller {
 	}
 
 
-	public function logout() {
-		redirect(U("User/logout"), 0, "log out");
+	public function logout($error = 0) {
+		redirect(U("User/logout", array('error' => $error)), 0, "log out");
 	}
 
 	public function goNote() {

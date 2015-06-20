@@ -12,7 +12,7 @@
 
 <h1>login out</h1>
 <!-- <FORM method="post" action=U("User/logout")> -->
-<FORM method="post" action="/yoyoyo/think/index.php/Home/Comments/logout">
+<FORM method="post" action="/yoyoyo/think/index.php/Home/Comments/logout/error/1">
 <INPUT type="submit" value="登出">
 </FORM>
 
@@ -70,6 +70,13 @@
 	<FORM method="post" action="/yoyoyo/think/index.php/Home/Comments/dianzan">
 	<INPUT type="submit" value="点赞">
 	</FORM><?php endif; ?>
+
+<br/>
+<h1>go to look notes about this book:</h1>
+<FORM method="post" action="/yoyoyo/think/index.php/Home/Comments/gotoNotes">
+<INPUT type="submit" value="gotoNotes">
+</FORM>
+<br/>
 
 
 

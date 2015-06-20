@@ -7,20 +7,33 @@ class UserController extends Controller {
 		// echo "hello world";
 	}
 
-	public function logout() {
+	public function logout($error = 0) {
 		session('username', null);
 		session('bookid', null);
+		switch ($error) {
+			case '2':
+				redirect(U('Notes/bookAllNotes'), 0, 'go back to bookAllNotes');
+				# code...
+				break;
+			case '1':
+				redirect(U('Comments/index'), 0, "go to comments");
+			default:
+				# code...
+				break;
+		}
 		// redirect(U('Index/login'), 3, "loginout success!");
 		redirect(U('User/index'), 0, "loginout success!");
 
 	}
 
 	public function login($error = 0) {
-		$this->assign('error', $error);
+		// $this->assign('error', $error);
 		// 0  --- no error
 		// 1  --- dian zan
 		// 2  --- add comment  
-		// 3  --- add note
+		// 3  --- my bookNotes
+		// 4  -- 
+		$this->assign('gogo', $error);
 		$this->display();
 	}
 
@@ -48,7 +61,7 @@ class UserController extends Controller {
 	}
 
 
-	public function loginin() {
+	public function loginin($error = 0) {
 		$username = I('post.username');
 		$password = I('post.password');
 		$uu = (string)$username;
@@ -58,7 +71,22 @@ class UserController extends Controller {
 		$data2 = $user->where("$sql")->find();
 		if ($data2) {
 			$_SESSION['username'] = $uu;
-			redirect(U('Index/index'), 0);
+			// redirect(U('Index/index'), 0);
+			// redirect(U("$error"), 0);
+			switch ($error) {
+				case '1':
+				case '2':
+					redirect(U('comments/comments'), 0, "go to comments");
+					# code...
+					break;
+				case '3':
+					redirect(U('Notes/myBookNotes'), 0, "go to myBookNotes");
+					break;
+				default:
+					redirect(U('User/index'), 0, 'go to user');
+					# code...
+					break;
+			}
 		}	else {
 				// echo "login fail";
 				$this->error("您的用户名和密码不匹配");
